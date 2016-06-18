@@ -9,7 +9,20 @@ class LogInController extends Controller
 {
     public function indexAction()
     {
-        return new Response('Bienvenido al LogIn');
+        $em = $this->getDoctrine()->getManager();
+
+        $users = $em->getRepository('LogInLogInBundle:Account')->findAll();
+
+        $res = 'Lista <br/>';
+
+
+
+        foreach ($users as $user) {
+            $res .= "Usuario =".$user->getUser()." Pass =".$user->getPassword()."<br/>";
+        }
+
+        return new Response($res);
+
     }
 
     /*public function pruebaAction($page){
@@ -24,8 +37,17 @@ class LogInController extends Controller
     	return new Response('mira q capo '.$page);
     }
 
-     public function viewAction($page){
-    	return new Response('mira q capo '.$page);
+     public function viewAction($id){
+    	$repository = $this->getDoctrine()->getRepository('LogInLogInBundle:Account');
+        //$user = $repository->find($id); //esta solo busca por id
+        //$user = $repository->findOneByUser($id);
+        $user = $repository->findOneByIdUser($id);///ACLARACION... la funcion es finOneBy y a este le agrego el nombre del campo como se ve en el ejemplo ariba
+
+
+
+        return new Response('Usuario='.$user->getUser()." Pass =".$user->getPassword()."<br/>");
+
+
     }
 
      public function deleteAction($page){
