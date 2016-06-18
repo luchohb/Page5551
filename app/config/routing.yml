@@ -1,3 +1,7 @@
+log_in_log_in:
+    resource: "@LogInLogInBundle/Resources/config/routing.yml"
+    prefix:   /
+
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation

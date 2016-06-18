@@ -1,0 +1,4 @@
+services:
+#    log_in_log_in.example:
+#        class: LogIn\LogInBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]

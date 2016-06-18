@@ -1,0 +1,30 @@
+log_in_log_in_homepage: #nombre que puede ser cualquiera
+    path:     /hello/{name} #url de como acceden ellos a la pagina
+    defaults: { _controller: LogInLogInBundle:Default:index } #la funcion a la q va hacer referencia en el controlador
+
+log_in_log_in_index:
+    path: /login/index
+    defaults: { _controller: LogInLogInBundle:LogIn:index }
+
+#log_in_log_in_prueba:
+#    path: /login/prueba/{page}
+#    defaults: { _controller: LogInLogInBundle:LogIn:prueba, page: 1 }
+#    requirements:
+#        page: \d+
+
+
+log_in_log_in_add:
+    path: /login/add
+    defaults: { _controller: LogInLogInBundle:LogIn:add }
+
+log_in_log_in_edit:
+    path: /login/edit/{id}
+    defaults: { _controller: LogInLogInBundle:LogIn:edit }
+
+log_in_log_in_view:
+    path: /login/view/{id}
+    defaults: { _controller: LogInLogInBundle:LogIn:view }
+
+log_in_log_in_delete:
+    path: /login/delete/{id}
+    defaults: { _controller: LogInLogInBundle:LogIn:delete }
